@@ -1,9 +1,3 @@
-#!/usr/bin/python3
-"""
-Module for processing and formatting text.
-"""
-
-
 def text_indentation(text):
     """
     Adds 2 new lines after '.', '?', and ':' in the given text.
@@ -29,8 +23,10 @@ def text_indentation(text):
             print()
             line_buffer = ""
 
-        while index + 1 < len(text) and text[index + 1] == " ":
-            index += 1
+            # Ignore uniquement les espaces multiples après un délimiteur
+            if index + 1 < len(text) and text[index + 1] == " ":
+                while index + 1 < len(text) and text[index + 1] == " ":
+                    index += 1
         index += 1
 
     if line_buffer.strip():
