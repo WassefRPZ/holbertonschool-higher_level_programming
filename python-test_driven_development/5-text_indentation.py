@@ -29,10 +29,9 @@ def text_indentation(text):
             print()
             line_buffer = ""
 
-        while index + 1 < len(text) and text[index + 1] == " ":
-            index += 1
+            while index + 1 < len(text) and text[index + 1] == " ":
+                index += 1
         index += 1
 
     if line_buffer.strip():
         print(line_buffer.strip(), end="")
-
