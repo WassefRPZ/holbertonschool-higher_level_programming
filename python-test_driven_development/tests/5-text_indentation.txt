@@ -1,0 +1,58 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test with a simple sentence
+>>> text_indentation("Alice. How are you?")
+Alice.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+
+# Test with no space after punctuation
+>>> text_indentation("Alice.Bob")
+Alice.
+<BLANKLINE>
+Bob
+
+# Test with mixed punctuation
+>>> text_indentation("Alice.: Bob")
+Alice.
+<BLANKLINE>
+:
+<BLANKLINE>
+Bob
+
+# Test with leading and trailing spaces
+>>> text_indentation("   Alice.   Bob?   ")
+Alice.
+<BLANKLINE>
+Bob?
+<BLANKLINE>
+
+# Test with extra spaces after punctuation
+>>> text_indentation("Alice.   How are you?")
+Alice.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+
+# Test with invalid input: integer
+>>> text_indentation(42)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# Test with invalid input: None
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# Test with invalid input: list
+>>> text_indentation(["Alice", "Bob"])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# Test with an empty string
+>>> text_indentation("")
+
+# Test with no punctuation
+>>> text_indentation("Alice Bob")
+Alice Bob
