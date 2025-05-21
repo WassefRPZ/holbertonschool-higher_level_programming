@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+module
+"""
+
+
 class Square:
-    # Classe vide qui définit un carré
+    """
+    une class
+    """
     pass
