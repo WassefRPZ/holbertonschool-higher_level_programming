@@ -3,6 +3,7 @@
 Module définissant la classe Square.
 """
 
+
 class Square:
     """
     Classe représentant un carré.
