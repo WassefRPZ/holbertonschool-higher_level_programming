@@ -110,4 +110,4 @@ class Rectangle:
             lignes = []  # Liste pour stocker chaque ligne du rectangle
             for _ in range(self.__height):
                 lignes.append("#" * self.__width)
-                return "\n".join(lignes)
+            return "\n".join(lignes)
