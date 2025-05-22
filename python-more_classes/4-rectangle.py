@@ -111,6 +111,7 @@ class Rectangle:
             for _ in range(self.__height):
                 lignes.append("#" * self.__width)
             return "\n".join(lignes)
+
     def __repr__(self):
         """
         Retourne une chaîne qui permet de recréer le rectangle avec eval().
