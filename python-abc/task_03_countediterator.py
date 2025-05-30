@@ -46,6 +46,9 @@ class CountedIterator:
         Raises:
             StopIteration: Quand il n'y a plus d'éléments à parcourir.
         """
-        self.count += 1
-        item = next(self.iterator)
-        return item
+        try:
+            self.count += 1
+            item = next(self.iterator)
+            return item
+        except StopIteration:
+            raise StopIteration
