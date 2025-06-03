@@ -6,7 +6,7 @@ Module pour ajouter du texte à des fichiers.
 
 def append_write(filename="", text=""):
     """
-    Ajoute une chaîne à la fin d'un fichier et retourne le nombre de caractères ajoutés.
+    Ajoute une chaîne à la fin d'un fichier et retourne le nombre de caractère.
 
     Args:
         filename (str): Le nom du fichier à modifier.

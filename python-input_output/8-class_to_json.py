@@ -3,6 +3,7 @@
 Module contenant une fonction de conversion objet vers dictionnaire.
 """
 
+
 def class_to_json(obj):
     """
     Retourne la représentation dictionnaire d'un objet pour la sérialisation JSON.

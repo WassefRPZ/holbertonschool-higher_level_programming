@@ -4,6 +4,7 @@ Module contenant une fonction pour charger des objets depuis un fichier JSON.
 """
 import json
 
+
 def load_from_json_file(filename):
     """
     Crée un objet Python depuis un fichier JSON.

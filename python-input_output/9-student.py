@@ -3,6 +3,7 @@
 Module contenant la classe Student.
 """
 
+
 class Student:
     """
     Classe représentant un étudiant.
