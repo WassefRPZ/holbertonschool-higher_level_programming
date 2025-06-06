@@ -1,58 +1,31 @@
 #!/usr/bin/python3
 """
-Module pour la sérialisation d'objets personnalisés avec pickle.
+Module pour la sérialisation et désérialisation JSON de base.
 """
-import pickle
+import json
 
-class CustomObject:
+
+def serialize_and_save_to_file(data, filename):
     """
-    Classe représentant un objet personnalisé avec capacités de sérialisation.
+    Sérialise et sauvegarde des données dans un fichier.
+
+    Args:
+        data: Données à sérialiser.
+        filename (str): Nom du fichier de destination.
     """
+    with open(filename, "w") as file:
+        json.dump(data, file)
 
-    def __init__(self, name, age, is_student):
-        """
-        Initialise une nouvelle instance de CustomObject.
 
-        Args:
-            name (str): Le nom de la personne.
-            age (int): L'âge de la personne.
-            is_student (bool): Si la personne est étudiante.
-        """
-        self.name = name
-        self.age = age
-        self.is_student = is_student
+def load_and_deserialize(filename):
+    """
+    Charge et désérialise des données depuis un fichier.
 
-    def display(self):
-        """
-        Affiche les attributs de l'objet.
-        """
-        print("Name: {}".format(self.name))
-        print("Age: {}".format(self.age))
-        print("Is Student: {}".format(self.is_student))
+    Args:
+        filename (str): Nom du fichier à charger.
 
-    def serialize(self, filename):
-        """
-        Sérialise cet objet dans un fichier avec pickle.
-
-        Args:
-            filename (str): Chemin du fichier de sauvegarde.
-        """
-        with open(filename, 'wb') as f:
-            pickle.dump(self, f)
-
-    @classmethod
-    def deserialize(cls, filename):
-        """
-        Désérialise un objet depuis un fichier.
-
-        Args:
-            filename (str): Chemin du fichier contenant l'objet.
-
-        Returns:
-            CustomObject: L'objet désérialisé, ou None si erreur.
-        """
-        try:
-            with open(filename, 'rb') as f:
-                return pickle.load(f)
-        except Exception:
-            return None
+    Returns:
+        object: Données désérialisées.
+    """
+    with open(filename, "r") as file:
+        return json.load(file)
