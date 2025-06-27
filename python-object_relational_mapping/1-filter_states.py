@@ -9,9 +9,7 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE CONVERT(name USING Latin1)\
-                 COLLATE Latin1_General_CS = '{}'\
-                 ORDER BY states.id".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC;")
     rows = cur.fetchall()
     for row in rows:
         print(row)
