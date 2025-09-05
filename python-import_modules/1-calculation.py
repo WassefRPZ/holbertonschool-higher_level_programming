@@ -15,7 +15,7 @@ def main():
     result = mul(a, b)
     print("{} * {} = {}".format(a, b, result))
 
-    result = div (a, b)
+    result = div(a, b)
     print("{} / {} = {}".format(a, b, result))
 
 
