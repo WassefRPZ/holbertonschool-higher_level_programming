@@ -1,22 +1,22 @@
 #!/usr/bin/python3
-import calculator_1
+from calculator_1 import add, sub, mul, div
 
 
 def main():
     a = 10
     b = 5
 
-    result = (a + b)
+    result = add(a, b)
     print("{} + {} = {}".format(a, b, result))
 
-    result = (a - b)
+    result = sub(a, b)
     print("{} - {} = {}".format(a, b, result))
 
-    result = (a * b)
+    result = mul(a, b)
     print("{} * {} = {}".format(a, b, result))
 
-    result = (a // b)
-    print("{} // {} = {}".format(a, b, result))
+    result = div (a, b)
+    print("{} / {} = {}".format(a, b, result))
 
 
 if __name__ == "__main__":
