@@ -7,7 +7,7 @@ def main():
     a = 1
     b = 2
 
-    result = add(a, b)
+    result = (a+b)
     print("{} + {} = {}".format(a, b, result))
 
 
