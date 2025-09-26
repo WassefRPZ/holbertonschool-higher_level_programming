@@ -39,19 +39,19 @@ class Circle(Shape):
         Constructeur du cercle.
         :param radius: rayon du cercle
         """
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
         """
         Calcule l'aire du cercle avec la formule : π * r²
         """
-        return math.pi * (self.radius**2)
+        return math.pi * (self.__radius**2)
 
     def perimeter(self):
         """
         Calcule le périmètre (circonférence)
         """
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * self.__radius
 
 
 class Rectangle(Shape):
@@ -66,20 +66,20 @@ class Rectangle(Shape):
         :param width: largeur
         :param height: hauteur
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
         """
         Calcule l'aire du rectangle avec la formule : largeur * hauteur
         """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
         Calcule le périmètre du rectangle
         """
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
 
 def shape_info(shape):
