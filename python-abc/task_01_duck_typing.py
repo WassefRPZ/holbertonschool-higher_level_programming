@@ -39,7 +39,7 @@ class Circle(Shape):
         Constructeur du cercle.
         :param radius: rayon du cercle
         """
-        self.__radius = radius
+        self.__radius = radius = abs(radius)
 
     def area(self):
         """
