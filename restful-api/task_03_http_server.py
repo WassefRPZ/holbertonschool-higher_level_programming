@@ -18,18 +18,25 @@ class FirstApi(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type: text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(b"OK")
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header("Content-Type: application/json;")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
-            info = {"version": "1.0", "description": 
+            info = {"version": "1.0", "description":
                     "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode())
         else:
             self.send_response(404)
-            self.send_header("Content-Type: application/json")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
+
+
+if __name__ == "__main__":
+    server_address = ("localhost", 8000)
+    httpd = http.server.HTTPServer(server_address, FirstApi)
+    print("Success")
+    httpd.serve_forever()
