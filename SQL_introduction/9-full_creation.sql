@@ -1,3 +1,4 @@
+-- that lists all databases of your MySQL server
 CREATE TABLE if NOT EXISTS second_table (
 	id int,
 	name varchar(256),
